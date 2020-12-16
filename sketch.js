@@ -4,6 +4,8 @@ const World = Matter.World;
 const Bodies = Matter.Bodies;
 const Body = Matter.Body;
 const Constraint = Matter.Constraint;
+const Render = Matter.Render;
+
 var rock,mango1,tree,boy,mango2,mango3,mango4,mango5,mango6,mango7,mango8,backGround,launcher;
 function preload()
 {
@@ -31,9 +33,19 @@ function setup() {
 
  launcher = new LAUNCHER(rock.body,{x: 160,y:550});
 
+ var render = Render.create({
+  element: document.body,
+  engine: engine,
+  options: {
+    width: 1300,
+    height: 600,
+    wireframes: false
+  }
+});
 
 	Engine.run(engine);
-  
+  Render.run(render);
+
 }
 
 function draw() {
@@ -64,7 +76,7 @@ function draw() {
  detectCollision(rock,mango5);
  detectCollision(rock,mango6);
  detectCollision(rock,mango7);
- detectCollision(rock,mango8);
+ detectCollision(rock,mango8); 
  
 }
 

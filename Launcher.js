@@ -4,8 +4,9 @@ class LAUNCHER{
             bodyA: bodyA,
             pointB: pointB,
             stiffness: 0.004,
-            length: 10
+            length: 1
         }
+        //this.bodyA = bodyA
         this.pointB = pointB
         this.launcher = Constraint.create(options);
         World.add(world, this.launcher);
